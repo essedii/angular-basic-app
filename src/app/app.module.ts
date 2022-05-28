@@ -1,16 +1,29 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppComponent } from './app.component';
+import { App } from './app';
+import { CoreModule } from './core/core.module';
+import { SharedModule } from './shared/shared.module';
+import { UserModule } from './user/user.module';
+import { RouterModule } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LayoutModule } from '@angular/cdk/layout';
+
+const AppRouter = RouterModule.forRoot([
+  { path:'', loadChildren: () => import('./user/user.module').then(m =>m.UserModule)}
+]);
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [ App ],
   imports: [
-    BrowserModule
+    AppRouter,
+
+    CoreModule, UserModule,
+    
+    BrowserModule, SharedModule, BrowserAnimationsModule, LayoutModule, 
+
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [App]
 })
 export class AppModule { }
