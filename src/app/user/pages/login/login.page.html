@@ -1,2 +1,7 @@
 <app-navbar></app-navbar>
-<app-login-form></app-login-form>
+<button type="button" (click)="openDialog()"></button>
+<div class=" d-flex justify-content-center ">
+    <app-login-form
+        (onLoginClicked)="login($event)">
+    </app-login-form>
+</div>

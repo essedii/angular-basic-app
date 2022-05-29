@@ -1,24 +1,28 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { UserModule } from '../user/user.module';
+
 import { MatCardModule } from '@angular/material/card';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 import { Navbar } from './pures/navbar/navbar';
 import { Card } from './pures/card/card';
 
 import { NotFoundPage } from './pages/notFoundPage/notFound.page';
+import { LoginFormComponent } from '../user/pures/login-form/login-form';
 
 
 @NgModule({
   declarations: [
-   Navbar, Card,
+   Navbar, Card, LoginFormComponent,
    
    NotFoundPage
   ],
   imports: [
-    CommonModule,
+    CommonModule, UserModule,
 
-    MatCardModule,
+    MatCardModule, MatDialogModule
   ],
   exports: [
     Navbar, NotFoundPage, Card

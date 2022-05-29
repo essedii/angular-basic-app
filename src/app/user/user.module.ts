@@ -1,12 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from '../shared/shared.module';
+import { ReactiveFormsModule } from '@angular/forms';
+import { CoreModule } from '../core/core.module';
 
 import { HomePage } from './pages/home/home.page';
-import { LoginFormComponent } from './pures/login-form/login-form.component';
 import { LoginPage } from './pages/login/login.page';
 import { SignupPage } from './pages/signup/signup.page';
-import { RegistrationFormComponent } from './pures/registration-form/registration-form.component';
+
+import { SignupFormComponent } from './pures/signup-form/signup-form';
+import { LoginFormComponent } from './pures/login-form/login-form';
+
+
 import { RouterModule } from '@angular/router';
 import { NotFoundPage } from '../shared/pages/notFoundPage/notFound.page';
 
@@ -21,16 +26,16 @@ const UserRouter = RouterModule.forChild([
 
 @NgModule({
   declarations: [
-    HomePage,
-    LoginPage,
-    SignupPage,
+    HomePage, LoginPage, SignupPage,
 
-    LoginFormComponent,
-    RegistrationFormComponent
+    LoginFormComponent, SignupFormComponent
+
   ],
   imports: [
     UserRouter,
-    CommonModule, SharedModule
-  ]
+
+    CommonModule, SharedModule, ReactiveFormsModule, CoreModule,
+  ],
+  exports:[ LoginFormComponent]
 })
 export class UserModule { }
