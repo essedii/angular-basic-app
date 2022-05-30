@@ -36,6 +36,6 @@ const UserRouter = RouterModule.forChild([
 
     CommonModule, SharedModule, ReactiveFormsModule, CoreModule,
   ],
-  exports:[ LoginFormComponent]
+
 })
 export class UserModule { }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ICredentials } from 'src/app/core/models/user';
 import { AuthService } from 'src/app/core/services/auth.service';
-import { BasicDialog } from 'src/app/shared/dialogs/basicDialog';
+import { LoginDialog } from 'src/app/shared/dialogs/loginDialog';
 import { MatDialog } from '@angular/material/dialog';
 
 
@@ -20,13 +20,15 @@ export class LoginPage implements OnInit {
   ngOnInit(): void {
   }
 
-  login(credentials: ICredentials){
-    console.log(credentials.email)
-    // this.authService.login(this.credentials.email, this.credentials.password)
+  public openDialog(){
+    this.dialog.open(LoginDialog)
+    .afterClosed()
+    .subscribe(formResult => {
+      if (formResult) {
+        console.log(formResult.value)
+      }
+    })
   }
 
-  openDialog(){
-    this.dialog.open(BasicDialog)
-  }
 
 }

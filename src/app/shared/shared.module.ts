@@ -1,31 +1,33 @@
+//angualar modules
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { UserModule } from '../user/user.module';
-
+import { ReactiveFormsModule } from '@angular/forms';
+//material modules
 import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
-
-
+//pures components
 import { Navbar } from './pures/navbar/navbar';
 import { Card } from './pures/card/card';
-
+//pages
 import { NotFoundPage } from './pages/notFoundPage/notFound.page';
-import { LoginFormComponent } from '../user/pures/login-form/login-form';
+//dialogs
+import { LoginDialog } from './dialogs/loginDialog';
+
 
 
 @NgModule({
   declarations: [
-   Navbar, Card, LoginFormComponent,
+   Navbar, Card,
    
-   NotFoundPage
+   NotFoundPage, LoginDialog,
   ],
   imports: [
-    CommonModule, UserModule,
+    CommonModule, ReactiveFormsModule,
 
-    MatCardModule, MatDialogModule
+    MatCardModule, MatDialogModule,
   ],
   exports: [
-    Navbar, NotFoundPage, Card
+    Navbar, NotFoundPage, Card, LoginDialog,
   ]
 })
 export class SharedModule { }
