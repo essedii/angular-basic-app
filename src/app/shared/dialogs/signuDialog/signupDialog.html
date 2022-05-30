@@ -1,0 +1,12 @@
+<h1 mat-dialog-title>Sign up</h1>
+<div mat-dialog-content>
+  <form [formGroup]="signupForm">
+    <div class="form-group d-flex flex-column">
+            <input class="my-1 form-control bg-outline-dark" type="text" placeholder="email" formControlName="email">
+            <input class="my-1 form-control bg-outline-dark" type="password" placeholder="password" formControlName="password">
+    </div>
+</form>
+</div>
+<div mat-dialog-actions >
+  <button mat-button mat-dialog-close type="button" class="btn btn-sm btn-outline-dark w-100" (click)="continue()">Continue</button>
+</div>

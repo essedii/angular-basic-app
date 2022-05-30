@@ -16,7 +16,7 @@ import { RouterModule } from '@angular/router';
 import { NotFoundPage } from '../shared/pages/notFoundPage/notFound.page';
 
 const UserRouter = RouterModule.forChild([
-  { path:'', redirectTo: 'login', pathMatch: 'full'},
+  { path:'', redirectTo: 'home', pathMatch: 'full'},
   { path: 'home', component: HomePage },
   { path: 'login', component: LoginPage },
   { path: 'signup', component: SignupPage },
@@ -28,7 +28,7 @@ const UserRouter = RouterModule.forChild([
   declarations: [
     HomePage, LoginPage, SignupPage,
 
-    LoginFormComponent, SignupFormComponent
+    LoginFormComponent, SignupFormComponent,
 
   ],
   imports: [

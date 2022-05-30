@@ -11,7 +11,8 @@ import { Card } from './pures/card/card';
 //pages
 import { NotFoundPage } from './pages/notFoundPage/notFound.page';
 //dialogs
-import { LoginDialog } from './dialogs/loginDialog';
+import { LoginDialog } from './dialogs/loginDialog/loginDialog';
+import { SignupDialog } from './dialogs/signuDialog/signupDialog';
 
 
 
@@ -19,7 +20,9 @@ import { LoginDialog } from './dialogs/loginDialog';
   declarations: [
    Navbar, Card,
    
-   NotFoundPage, LoginDialog,
+   NotFoundPage, 
+   
+   LoginDialog, SignupDialog
   ],
   imports: [
     CommonModule, ReactiveFormsModule,
@@ -27,7 +30,9 @@ import { LoginDialog } from './dialogs/loginDialog';
     MatCardModule, MatDialogModule,
   ],
   exports: [
-    Navbar, NotFoundPage, Card, LoginDialog,
+    Navbar, NotFoundPage, Card, 
+    
+    LoginDialog, SignupDialog,
   ]
 })
 export class SharedModule { }

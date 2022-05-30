@@ -1,4 +1,4 @@
-import { Component, createPlatform, Inject, OnInit } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
@@ -22,15 +22,12 @@ export class LoginDialog {
         @Inject(MAT_DIALOG_DATA) public data: any,
         
      ) {
-        this.loginForm = fb.group({
+        this.loginForm = this.fb.group({
             email: fb.control('', [Validators.required, Validators.email]),
             password: fb.control('', [Validators.required])
         })
      }
-
-    ngOnInit() { 
-    }
-
+     
     close(){
         this.dialogRef.close()
     }

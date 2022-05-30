@@ -1,6 +1,9 @@
-<!-- <nav class="navbar navbar-light bg-light"> -->
 <nav [ngClass]="!isMobile? ' navbar navbar-light bg-light' : ' navbar navbar-dark bg-dark'">
-    <div class="container-fluid">
-      <span class="navbar-brand mb-0 h1">PSN</span>
+    <div class="container-fluid d-flex justify-content-between ">
+      <span class="navbar-brand mx-2 h1">PSN</span>
+      <div *ngIf="!isLogged">
+        <button class="btn btn-sm btn-outline-dark mx-2" type="button" (click)="openLogin()">Log In</button>
+        <button class="btn btn-sm btn-dark mx-2" type="button" (click)="openSignup()">Sign Up</button>
+      </div>
     </div>
-  </nav>
+</nav>
