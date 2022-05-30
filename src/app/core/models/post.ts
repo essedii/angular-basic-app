@@ -1,4 +1,5 @@
-export interface post {
+export interface IPost {
+    id: string;
     title: string;
     subtitle: string;
     text: string;

@@ -10,6 +10,7 @@ import { Posts } from 'src/app/mockPosts';
 export class HomePage extends Sizer implements OnInit {
 
   posts = Posts;
+  postId!: number;
 
   constructor(
     sizer: BreakpointObserver,

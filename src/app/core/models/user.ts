@@ -5,6 +5,5 @@ export interface ICredentials {
 
 export interface IUser extends ICredentials {
     username: string;
+    image: any;
 }
-
-

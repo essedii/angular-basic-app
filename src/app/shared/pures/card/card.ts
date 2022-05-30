@@ -1,12 +1,12 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { post } from 'src/app/core/models/post';
+import { IPost } from 'src/app/core/models/post';
 
 @Component({
     selector: 'app-card',
     template: `
         <mat-card class="card">
-        <mat-card-header>
-            <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-header >
+            <!-- <div mat-card-avatar class="example-header-image"></div> -->
             <mat-card-title>{{post.title}}</mat-card-title>
             <mat-card-subtitle>{{post.subtitle}}</mat-card-subtitle>
         </mat-card-header>
@@ -27,7 +27,7 @@ import { post } from 'src/app/core/models/post';
 
 export class Card implements OnInit {
 
-    @Input() post!: post;
+    @Input() post!: IPost;
 
     constructor() { }
 

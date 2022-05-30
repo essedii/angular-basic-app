@@ -1,8 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: "Chivo-Regular";
+  src: local("Chivo"), url(./assets/fonts/Chivo/Chivo-Regular.ttf);
+}
 
+@font-face {
+  font-family: "Chivo-Light";
+  src: local("Chivo"), url(./assets/fonts/Chivo/Chivo-Light.ttf);
+}
 .card {
     max-width: 400px;
   }
+
+  /* i {
+    margin-left: 10px;
+    font-size: 30px;
+    height: 30px;
+    vertical-align:bottom;
+} */
 
 .form-control:focus {
   box-shadow: none !important;
@@ -11,9 +26,23 @@
 
 .btn:focus {
   box-shadow: none !important;
-  border-color: darkgray !important ;
+  border-color: rgb(169, 169, 169) !important ;
+}
+
+.mat-card{
+  border: none;
+  box-shadow: none;
+}
+
+.title {
+  font-family:"Chivo-light";
 }
 
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: rgb(247, 247, 247); }
+body {
+  margin: 0;
+  font-family: "Chivo-regular" !important; 
+  background: rgb(242,242,242);
+  background: radial-gradient(circle, rgba(242,242,242,1) 0%, rgba(249,249,249,1) 100%);
+ }
