@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { post } from 'src/app/core/models/post';
-import { Posts } from 'src/app/mockPosts';
 
 @Component({
     selector: 'app-card',

@@ -1,7 +1,7 @@
 <app-navbar
     [isMobile]="(isMobile$ | async) || false">
 </app-navbar>
-<div class="d-flex flex-column justify-content-center mx-auto ">
+<div style="padding-top: 66px;" class="d-flex flex-column justify-content-center mx-auto">
     <div class="my-2 mx-auto" *ngFor="let post of posts">
         <app-card [post]="post"></app-card>
     </div>
