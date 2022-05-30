@@ -1,5 +1,6 @@
-import { style } from '@angular/animations';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { post } from 'src/app/core/models/post';
+import { Posts } from 'src/app/mockPosts';
 
 @Component({
     selector: 'app-card',
@@ -7,26 +8,28 @@ import { Component, OnInit } from '@angular/core';
         <mat-card class="card">
         <mat-card-header>
             <div mat-card-avatar class="example-header-image"></div>
-            <mat-card-title>Shiba Inu</mat-card-title>
-            <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+            <mat-card-title>{{post.title}}</mat-card-title>
+            <mat-card-subtitle>{{post.subtitle}}</mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <img mat-card-image src={{post.url}} alt="Photo of a Shiba Inu">
         <mat-card-content>
             <p>
-            The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-            A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-            bred for hunting.
+            {{post.text}}
             </p>
         </mat-card-content>
-        <mat-card-actions>
+        <!-- <mat-card-actions>
             <button mat-button>LIKE</button>
             <button mat-button>SHARE</button>
-        </mat-card-actions>
+        </mat-card-actions> -->
         </mat-card>
     `
 })
 
+
 export class Card implements OnInit {
+
+    @Input() post!: post;
+
     constructor() { }
 
     ngOnInit() { }

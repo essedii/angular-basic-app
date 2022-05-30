@@ -34,7 +34,7 @@ const UserRouter = RouterModule.forChild([
   imports: [
     UserRouter,
 
-    CommonModule, SharedModule, ReactiveFormsModule, CoreModule,
+    CommonModule, SharedModule, ReactiveFormsModule, CoreModule, 
   ],
 
 })
