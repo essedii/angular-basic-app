@@ -1,7 +1,7 @@
 //angualar modules
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 //material modules
 import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -25,14 +25,15 @@ import { SignupDialog } from './dialogs/signuDialog/signupDialog';
    LoginDialog, SignupDialog
   ],
   imports: [
-    CommonModule, ReactiveFormsModule,
+    CommonModule, ReactiveFormsModule, FormsModule,
 
     MatCardModule, MatDialogModule,
   ],
   exports: [
     Navbar, NotFoundPage, Card, 
     
-    LoginDialog, SignupDialog,
+    LoginDialog, SignupDialog, ReactiveFormsModule,
+    FormsModule,
   ]
 })
 export class SharedModule { }

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from '../../shared/shared.module';
-import { ReactiveFormsModule } from '@angular/forms';
+// import { ReactiveFormsModule } from '@angular/forms';
 import { CoreModule } from '../../core/core.module';
 
 import { HomePage } from './pages/home/home.page';
@@ -34,7 +34,7 @@ const UserRouter = RouterModule.forChild([
   imports: [
     UserRouter,
 
-    CommonModule, SharedModule, ReactiveFormsModule, CoreModule, 
+    CommonModule, SharedModule, CoreModule, 
   ],
 
 })
