@@ -1,6 +1,9 @@
 <nav [ngClass]="!isMobile? ' navbar navbar-white bg-white fixed-top' : ' navbar navbar-dark bg-dark'">
     <div class="container-fluid d-flex justify-content-between ">
-      <span class="navbar-brand mx-2 h1 title">Basic App</span>
+      <div class="clickable" [routerLink]="['/home']">
+        <span class="navbar-brand mx-2 h1 title">Basic App</span>
+      </div>
+   
       <div>
         <div *ngIf="!isLogged">
           <button style="width: 80px; height: auto" class="btn btn-sm btn-outline-dark me-2" type="button" (click)="openLogin()">Log In</button>
@@ -9,23 +12,23 @@
 
             <button type="button" class="btn btn-white dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
 
-              <i class="fa-solid fa-user-astronaut fa-xl me-2"></i>
+              <i  class="fa-solid fa-cat fa-xl me-2 text-dark "></i>
             </button>
             <ul class="dropdown-menu dropdown-menu-end">
               <li><button class="dropdown-item d-flex align-items-center justify-content-start" type="button">
-                <i class="fa-solid fa-circle-user fa-fw"></i>
+                <i class="fa-solid fa-shield-cat fa-fw text-dark"></i>
                 <p class="my-auto ms-2">Profile</p>
               </button>
               </li>
               <li>
                 <button class="dropdown-item d-flex align-items-center justify-content-start" type="button "> 
-                  <i class="fa-solid fa-cart-shopping fa-fw"></i> 
+                  <i class="fa-solid fa-cart-shopping fa-fw text-dark"></i> 
                   <p class="my-auto ms-2">Shop</p> 
                 </button>
               </li>
               <li>
                 <button class="dropdown-item d-flex align-items-center justify-content-start" type="button"> 
-                  <i class="fa-solid fa-arrow-right-from-bracket fa-fw"></i>
+                  <i class="fa-solid fa-arrow-right-from-bracket fa-fw text-dark"></i>
                   <p class="my-auto ms-2">Log Out</p> 
                 </button>
               </li>

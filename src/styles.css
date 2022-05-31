@@ -38,6 +38,10 @@
   font-family:"Chivo-light";
 }
 
+.clickable {
+  cursor: pointer;
+}
+
 
 html, body { height: 100%; }
 body {

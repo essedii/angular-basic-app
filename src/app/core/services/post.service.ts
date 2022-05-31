@@ -9,8 +9,9 @@ export class PostService {
 
     constructor(private http: HttpClient) { }
     
-    fetchPost(postId:string) : Observable<IPost>  {
-        return this.http.get<IPost>(`${this.baseUrl}/mocks/mockPosts.json/${postId}`);
+    fetchPost(): Observable<IPost[]>  {
+        // return this.http.get<IPost>(`${this.baseUrl}/mocks/mockPosts.json/${postId}`);
+        return this.http.get<IPost[]>(`${this.baseUrl}/mocks/mockPosts.json`);
     }
 
     fetchPosts(): Observable<IPost[]> {

@@ -2,6 +2,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 //material modules
 import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -25,7 +26,7 @@ import { SignupDialog } from './dialogs/signuDialog/signupDialog';
    LoginDialog, SignupDialog
   ],
   imports: [
-    CommonModule, ReactiveFormsModule, FormsModule,
+    CommonModule, ReactiveFormsModule, FormsModule, RouterModule,
 
     MatCardModule, MatDialogModule,
   ],
