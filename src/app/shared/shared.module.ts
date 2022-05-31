@@ -34,7 +34,7 @@ import { SignupDialog } from './dialogs/signuDialog/signupDialog';
     Navbar, NotFoundPage, Card, 
     
     LoginDialog, SignupDialog, ReactiveFormsModule,
-    FormsModule,
+    FormsModule, CommonModule,
   ]
 })
 export class SharedModule { }

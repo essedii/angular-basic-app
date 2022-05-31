@@ -5,6 +5,4 @@ import { Component } from '@angular/core';
   template:`
     <router-outlet></router-outlet>`,
 })
-export class App {
-  title = 'PSN-Frontend';
-}
+export class App {}
