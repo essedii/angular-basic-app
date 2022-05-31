@@ -1,5 +1,5 @@
 <app-navbar
     [isMobile]="(isMobile$ | async) || false">
 </app-navbar>
-<!-- <app-post-detail [post]="post"></app-post-detail> -->
+<app-post-detail *ngIf="post" [post]="post"></app-post-detail>
 

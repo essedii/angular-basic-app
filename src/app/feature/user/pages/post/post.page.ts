@@ -11,9 +11,9 @@ import { Sizer } from 'src/app/utils/screenSizer';
 
 export class PostPage extends Sizer implements OnInit {
 
-    // post!:IPost;
+    post?:IPost;
     posts?: IPost[];
-    // postId!: string;
+    postId?: string;
 
     constructor(
       private route: ActivatedRoute,
@@ -25,30 +25,27 @@ export class PostPage extends Sizer implements OnInit {
       }
 
       private parseParams = (params: Params) => {
-        // this.postId = params['id'];
-        // if (this.postId) {
-        //   console.log(this.postId)
-          
-        //   this.fetchData()
-        // }
+        this.postId = params['id'];
+        if (this.postId) {
+          this.fetchData(this.postId)
+        }
       }
 
     ngOnInit() {
-      this.fetchData()
-     }
-
-     fetchData(){
-     this.postService.fetchPost().subscribe(data => this.posts = data)
-     if(this.posts){
-      console.log(this.posts[1])
-     }
-
-      // this.postService.fetchPosts().subscribe(data => this.posts = data)
-      // if (postId){
-      //   let post = this.posts.filter(post => post.id === postId)
-      //   if (post)
-      //   this.post = post[0]
+      if (this.postId) {
+        this.fetchData(this.postId)
       }
- 
-     
+
+    }
+
+     fetchData(postId: string){
+
+     this.postService.fetchPosts().subscribe(
+       data => {
+         this.posts = data;
+         let xArray = this.posts
+         let xFiltered = xArray.filter( post => post.id === postId)
+         this.post = xFiltered[0]
+        })
+     }
 }

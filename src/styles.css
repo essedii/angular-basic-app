@@ -29,6 +29,10 @@
   border-color: rgb(169, 169, 169) !important ;
 }
 
+.dropdown-item:active {
+  background-color: rgb(112, 112, 112)!important;
+}
+
 .mat-card{
   border: none;
   box-shadow: none;
@@ -42,6 +46,9 @@
   cursor: pointer;
 }
 
+.cdk-overlay-container{
+  z-index: 1031;
+}
 
 html, body { height: 100%; }
 body {

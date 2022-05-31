@@ -30,8 +30,13 @@ export class HomePage extends Sizer implements OnInit {
   }
 
   fetchData(){ 
-    this.postService.fetchPosts().subscribe(data => this.posts = data)
-
-  }
-
-}
+    this.postService.fetchPosts().subscribe(
+      data => {
+        this.posts = data;
+        console.log(this.posts)
+        console.log(this.posts[0])
+        // let postsArray = this.posts;
+        // console.log(postsArray);
+        // console.log(postsArray[0])
+      })
+    }}
