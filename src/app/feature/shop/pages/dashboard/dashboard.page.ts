@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-    templateUrl: 'items.page.html'
+    templateUrl: 'dashboard.page.html'
 })
 
-export class ItemsPage implements OnInit {
+export class DashboardPage implements OnInit {
     constructor() { }
 
     ngOnInit() { }

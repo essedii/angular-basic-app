@@ -6,9 +6,9 @@ import { NotFoundPage } from './shared/pages/notFoundPage/notFound.page';
 
 const appRoutes: Routes = [
     { path:'', loadChildren: () => import('./feature/user/user.module').then(m =>m.UserModule)},
-    // { path:'shop', loadChildren: () => import('./feature/shop/shop.module').then(m =>m.ShopModule)},
+    { path:'admin', loadChildren: () => import('./feature/admin/admin.module').then(m =>m.AdminModule)},
+    { path:'shop', loadChildren: () => import('./feature/shop/shop.module').then(m =>m.ShopModule)},
     { path: '**', component: NotFoundPage }
-  
   ];
 
 @NgModule({

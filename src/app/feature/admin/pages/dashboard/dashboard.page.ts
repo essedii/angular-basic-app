@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-    selector: 'selector-name',
-    template:``,
+    templateUrl: 'dashboard.page.html'
 })
 
-export class Shop implements OnInit {
+export class DashboardPage implements OnInit {
     constructor() { }
 
     ngOnInit() { }

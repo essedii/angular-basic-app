@@ -5,26 +5,21 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { DashboardPage } from './pages/dashboard/dashboard.page';
 
 
-
-
-const shopRoutes: Routes = [
-    {path: '',  component: DashboardPage},
-];
+const adminRoutes: Routes = [
+    { path:'', component: DashboardPage}
+]
 
 @NgModule({
     declarations: [
-        DashboardPage,
-        
+        DashboardPage
     ],
     imports: [
-        RouterModule.forChild(shopRoutes),
-
-        SharedModule, 
-    ],
+        RouterModule.forChild(adminRoutes),
+    
+        SharedModule],
     exports: [
-        RouterModule
+        RouterModule,
     ],
-  
     providers: [],
 })
-export class ShopModule { }
+export class AdminModule { }
