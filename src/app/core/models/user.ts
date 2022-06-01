@@ -5,5 +5,11 @@ export interface ICredentials {
 
 export interface IUser extends ICredentials {
     username: string;
-    image: any;
+    image?: any;
+    role?: ['admin', 'user']
+}
+
+export enum AccountTypes {
+    user = 'user',
+    admin = 'admin'
 }
