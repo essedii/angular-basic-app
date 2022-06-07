@@ -22,7 +22,6 @@ export class Navbar implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    console.log('IS A GUEST?',this.isGuest)
   }
 
   openLogin(){

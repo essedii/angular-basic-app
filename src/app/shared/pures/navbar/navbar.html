@@ -9,7 +9,7 @@
           </div>
 
           <div [ngClass]="!isMobile?'d-flex flex-row justify-content-between':'w-100 d-flex flex-row-reverse justify-content-between'">
-            <div class="d-flex align-items-center" *ngIf="isGuest">
+            <div class="d-flex align-items-center">
               <button style="width: 80px; height: auto" class="btn btn-sm btn-outline-dark me-2" type="button" (click)="openLogin()">Log In</button>
               <button style="width: 80px; height: auto" class="btn btn-sm btn-dark me-2" type="button" (click)="openSignup()">Sign Up</button>
             </div>
@@ -25,8 +25,8 @@
                   <i *ngIf="!isMobile" class="fa-solid fa-angle-down"></i>
                 </div>
               </button>
-              <ul  [ngClass]="!isMobile? 'dropdown-menu dropdown-menu-end' : 'dropdown-menu'" >
-                <li *ngIf="!isGuest">
+              <ul [ngClass]="!isMobile? 'dropdown-menu dropdown-menu-end' : 'dropdown-menu'" >
+                <li>
                   <button class="dropdown-item d-flex align-items-center justify-content-start" type="button">
                     <i class="fa fa-shield-cat fa-fw text-dark"></i>
                     <p class="my-auto ms-2">Profile</p>
@@ -41,8 +41,7 @@
                 <li>
                   <button  class="dropdown-item d-flex align-items-center justify-content-start" type="button" (click)="logOut()"> 
                     <i class="fa fa-arrow-right-from-bracket fa-fw text-dark"></i>
-                    <p  *ngIf="!isGuest" class="my-auto ms-2">Log Out</p> 
-                    <p  *ngIf="!!isGuest" class="my-auto ms-2">Test other account</p> 
+                    <p class="my-auto ms-2">Log Out</p> 
                   </button>
                 </li>
               </ul>
