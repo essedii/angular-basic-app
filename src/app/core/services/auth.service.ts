@@ -1,11 +1,12 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, catchError, first, Observable, throwError } from 'rxjs';
 import { Router } from '@angular/router';
+import { IUser } from '../models/user';
 
 @Injectable({providedIn: 'root'})
 export class AuthService {
-    private readonly baseUrl = '';
+    private readonly baseUrl =  '/assets/mocks/mockUsers.json'
 
     httpOptions: { headers: HttpHeaders} = {
         headers: new HttpHeaders({ 'Content-Type': 'Application/json' })
@@ -22,4 +23,11 @@ export class AuthService {
     signup(user: any){
         return this.http.post(`${this.baseUrl}/siugnup`, user, this.httpOptions).subscribe()
     }
+
+    getCurrentUser() {
+        return this.http
+            .get<IUser>(`${this.baseUrl}`)       
+    }
+
+    
 }

@@ -1,3 +1,11 @@
-<div style="padding-top: 66px;" class="container" >
-    <app-card [post]="post"></app-card>
+<div [ngClass]="!isMobile? ' container w-75 bg-white mb-5 ' : 'container'">
+    <div [ngStyle]="!isMobile? {'margin-top': '66px'} : {'padding-top':'48px'}" class="d-flex flex-column"> 
+        <h2 [ngClass]="!isMobile? 'mt-3 ' : 'mt-3'">{{post.title}}</h2>
+        <h5 >{{post.subtitle}}</h5>
+
+        <div class="mx-auto d-flex justify-content-between"  [ngClass]="!isMobile? 'mt-2' : ''"> <img  class="img-fluid" src="{{post.url}}" alt="Responsive image"></div>
+       
+        <p  [ngClass]="!isMobile? 'mt-4' : 'mt-2'">{{post.text}}</p>
+    </div>
 </div>
+<div *ngIf="!isMobile">&nbsp;</div>

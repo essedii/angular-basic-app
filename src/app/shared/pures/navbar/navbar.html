@@ -1,40 +1,53 @@
-<nav [ngClass]="!isMobile? ' navbar navbar-white bg-white fixed-top' : ' navbar navbar-dark bg-dark'">
-    <div class="container-fluid d-flex justify-content-between ">
-      <div class="clickable" [routerLink]="['/']">
-        <span class="navbar-brand mx-2 h1 title">Basic App</span>
-      </div>
-   
-      <div>
-        <div *ngIf="!isLogged">
-          <button style="width: 80px; height: auto" class="btn btn-sm btn-outline-dark me-2" type="button" (click)="openLogin()">Log In</button>
-          <button style="width: 80px; height: auto" class="btn btn-sm btn-dark me-2" type="button" (click)="openSignup()">Sign Up</button>
-          <div class="btn-group">
+<!-- <nav [ngClass]="!isMobile? ' navbar navbar-white bg-white fixed-top' : ' navbar navbar-dark bg-dark'"> -->
+  <nav  class= ' navbar navbar-white bg-white fixed-top border-bottom'>
+    <div class="container-fluid">
 
-            <button type="button" class="btn btn-white dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        <div  class="w-100 d-flex flex-row justify-content-between align-items-center">
 
-              <i  class="fa-solid fa-cat fa-xl me-2 text-dark "></i>
-            </button>
-            <ul class="dropdown-menu dropdown-menu-end">
-              <li><button class="dropdown-item d-flex align-items-center justify-content-start" type="button">
-                <i class="fa-solid fa-shield-cat fa-fw text-dark"></i>
-                <p class="my-auto ms-2">Profile</p>
+          <div *ngIf="!isMobile" class="clickable" [routerLink]="['/home']">
+            <span class="navbar-brand mx-2 h1 title">Basic App</span>
+          </div>
+
+          <div [ngClass]="!isMobile?'d-flex flex-row justify-content-between':'w-100 d-flex flex-row-reverse justify-content-between'">
+            <div class="d-flex align-items-center" *ngIf="isGuest">
+              <button style="width: 80px; height: auto" class="btn btn-sm btn-outline-dark me-2" type="button" (click)="openLogin()">Log In</button>
+              <button style="width: 80px; height: auto" class="btn btn-sm btn-dark me-2" type="button" (click)="openSignup()">Sign Up</button>
+            </div>
+
+            <div  *ngIf="isMobile && isPostPage"  class=" ms-1 d-flex flex-row justify-content-between align-items-center" [routerLink]="['/']">
+              <i class="fa fa-arrow-left fa-xl" ></i>
+            </div>
+
+            <div *ngIf="!isPostPage || !isMobile" class="btn-group">
+              <button [ngClass]="!isMobile? 'me-0' : ''" type="button" class="btn dropdown btn-white" data-bs-toggle="dropdown" aria-expanded="false">
+                <div class="d-flex flex-row justify-content-between align-items-center">
+                  <i [ngClass]="!isMobile? 'fa-solid fa-cat fa-xl me-2 text-dark ' : 'fa-solid fa-grip-lines fa-xl me-2 text-dark'"></i>
+                  <i *ngIf="!isMobile" class="fa-solid fa-angle-down"></i>
+                </div>
               </button>
-              </li>
-              <li>
-                <button class="dropdown-item d-flex align-items-center justify-content-start" type="button "> 
-                  <i class="fa-solid fa-cart-shopping fa-fw text-dark"></i> 
-                  <p class="my-auto ms-2">Shop</p> 
-                </button>
-              </li>
-              <li>
-                <button class="dropdown-item d-flex align-items-center justify-content-start" type="button"> 
-                  <i class="fa-solid fa-arrow-right-from-bracket fa-fw text-dark"></i>
-                  <p class="my-auto ms-2">Log Out</p> 
-                </button>
-              </li>
-            </ul>
+              <ul  [ngClass]="!isMobile? 'dropdown-menu dropdown-menu-end' : 'dropdown-menu'" >
+                <li *ngIf="!isGuest">
+                  <button class="dropdown-item d-flex align-items-center justify-content-start" type="button">
+                    <i class="fa fa-shield-cat fa-fw text-dark"></i>
+                    <p class="my-auto ms-2">Profile</p>
+                  </button>
+                </li>
+                <li>
+                  <button class="dropdown-item d-flex align-items-center justify-content-start" type="button "> 
+                    <i class="fa fa-cart-shopping fa-fw text-dark"></i> 
+                    <p class="my-auto ms-2">Shop</p> 
+                  </button>
+                </li>
+                <li>
+                  <button  class="dropdown-item d-flex align-items-center justify-content-start" type="button" (click)="logOut()"> 
+                    <i class="fa fa-arrow-right-from-bracket fa-fw text-dark"></i>
+                    <p  *ngIf="!isGuest" class="my-auto ms-2">Log Out</p> 
+                    <p  *ngIf="!!isGuest" class="my-auto ms-2">Test other account</p> 
+                  </button>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>  
     </div>
 </nav>

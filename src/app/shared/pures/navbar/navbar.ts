@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { LoginDialog } from '../../dialogs/loginDialog/loginDialog';
 import { SignupDialog } from '../../dialogs/signuDialog/signupDialog';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -10,14 +11,18 @@ import { MatDialog } from '@angular/material/dialog';
 export class Navbar implements OnInit {
 
   @Input() isMobile?: boolean;
-  @Input() isLogged?: boolean;
+  @Input() user?: any;
+  @Input() isPostPage?: boolean;
+  @Input() isGuest?: boolean;
+
 
   constructor(
-    public dialog: MatDialog 
+    public dialog: MatDialog,
+    private router: Router,
   ) { }
 
   ngOnInit(): void {
-    console.log(this.isMobile)
+    console.log('IS A GUEST?',this.isGuest)
   }
 
   openLogin(){
@@ -29,6 +34,10 @@ export class Navbar implements OnInit {
       }
     })
   }
+  logOut(){
+    localStorage.removeItem('token')
+    this.router.navigate(['/'])
+  }
 
   openSignup(){
     this.dialog.open(SignupDialog)
@@ -39,6 +48,4 @@ export class Navbar implements OnInit {
       }
     })
   }
-
-
 }

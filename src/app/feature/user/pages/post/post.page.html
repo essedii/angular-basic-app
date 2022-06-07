@@ -1,5 +1,6 @@
 <app-navbar
+    [isPostPage]="true"
     [isMobile]="(isMobile$ | async) || false">
 </app-navbar>
-<app-post-detail *ngIf="post" [post]="post"></app-post-detail>
+<app-post-detail [isMobile]="(isMobile$ | async) || false" *ngIf="post" [post]="post"></app-post-detail>
 

@@ -9,6 +9,7 @@ import { IPost } from 'src/app/core/models/post';
 export class PostDetail implements OnInit {
 
     @Input() post!: IPost;
+    @Input() isMobile?: boolean;
 
     constructor() { }
 

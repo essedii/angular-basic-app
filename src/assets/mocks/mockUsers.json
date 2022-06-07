@@ -1,0 +1,16 @@
+[
+    {
+      "id": "1",
+      "username": "FakeUser",
+      "accountType": "user",
+      "email": "user@user.com",
+      "password": ""
+    },
+    {
+      "id": "2",
+      "username": "FakeAdmin",
+      "accountType": "admin",
+      "email": "admin@admin.com",
+      "password": ""
+    }
+  ]

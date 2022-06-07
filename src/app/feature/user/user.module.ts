@@ -7,6 +7,7 @@ import { HomePage } from './pages/home/home.page';
 import { LoginPage } from './pages/login/login.page';
 import { SignupPage } from './pages/signup/signup.page';
 import { PostPage } from './pages/post/post.page';
+import { TryPage } from './pages/try/try';
 
 import { SignupFormComponent } from './pures/signup-form/signup-form';
 import { LoginFormComponent } from './pures/login-form/login-form';
@@ -14,7 +15,8 @@ import { PostDetail } from './pures/post-detail/post-detail';
 
 
 const userRoutes: Routes = [
-  { path:'', component: HomePage },
+  { path:'', component: TryPage },
+  { path:'home', component: HomePage },
   { path: 'login', component: LoginPage },
   { path: 'signup', component: SignupPage },
   { path: 'post/:id', component: PostPage },
@@ -22,7 +24,7 @@ const userRoutes: Routes = [
 
 @NgModule({
   declarations: [
-    HomePage, LoginPage, SignupPage, PostPage,
+    HomePage, LoginPage, SignupPage, PostPage, TryPage,
     
     LoginFormComponent, SignupFormComponent, PostDetail,
   ],
